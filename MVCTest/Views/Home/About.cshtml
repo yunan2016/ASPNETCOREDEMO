@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<p>Use this area to provide additional information.</p>
+
+<select id="mySelect"></select>
+
+
+@section Scripts{
+    
+    <script>
+        $(function () {
+            var items = [
+                { name: 'name1', id: 1 },
+                { name: 'name2',  id: 2 },
+                { name: 'name3', id: 3 }
+            ];
+
+
+            $.each(items, function (i, item) {
+                $('#mySelect').append($('<option>', {
+                    value: item.id,
+                    text: item.name
+                }));
+            });
+
+
+            //$('#mySelect').append($('<option>', {
+            //    value: 1,
+            //    text: 'My option'
+            //}));
+
+        })
+
+    </script>
+    
+    
+    
+    
+    }
