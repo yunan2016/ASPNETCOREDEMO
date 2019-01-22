@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AreaAndPolicy.Models;
 using Microsoft.AspNetCore.Authorization;
+using static AreaAndPolicy.Startup;
 
 namespace AreaAndPolicy.Controllers
 {
@@ -16,16 +17,27 @@ namespace AreaAndPolicy.Controllers
             return View();
         }
 
-        [Authorize(Policy = "AtLeast21")]
+        //[Authorize(Policy = "AtLeast21")]
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
 
             return View();
         }
+        [Route("/home/custom-error-response")]
+        public IActionResult CustomErrorResponse()
+        {
+            var customErrorResponseFeature = HttpContext.Features.Get<ICustomErrorResponseFeature>();
+
+            var view = View(customErrorResponseFeature);
+            view.StatusCode = customErrorResponseFeature.StatusCode;
+            return view;
+        }
 
         public IActionResult Contact()
         {
+                
+           
             ViewData["Message"] = "Your contact page.";
 
             return View();

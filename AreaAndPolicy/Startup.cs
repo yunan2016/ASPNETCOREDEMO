@@ -15,6 +15,7 @@ using Microsoft.Extensions.DependencyInjection;
 using AreaAndPolicy.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using ReflectionIT.Mvc.Paging;
 
 namespace AreaAndPolicy
 {
@@ -24,6 +25,7 @@ namespace AreaAndPolicy
         {
             Configuration = configuration;
         }
+        // Custom context feature
 
         public IConfiguration Configuration { get; }
 
@@ -45,7 +47,7 @@ namespace AreaAndPolicy
 
             services.AddMvc(config =>
             {
-               
+                //config.Filters.Add(new StatusCodeResultFilter());
                // config.Filters.Add(new AuthorizeFilter("AtLeast21"));
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
@@ -56,6 +58,7 @@ namespace AreaAndPolicy
           policy.Requirements.Add(new MinimumAgeRequirement(21)));
             });
 
+            services.AddPaging();
             services.AddHttpContextAccessor();
             services.AddSingleton<IAuthorizationHandler, MinimumAgeHandler>();
         }
@@ -65,6 +68,7 @@ namespace AreaAndPolicy
         {
             if (env.IsDevelopment())
             {
+                //app.UseMiddleware<CustomErrorResponseMiddleware>("/home/custom-error-response");
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
             }
@@ -79,7 +83,10 @@ namespace AreaAndPolicy
             app.UseCookiePolicy();
 
             app.UseAuthentication();
+            //app.UseStatusCodePagesWithReExecute("/Error/{0}");
+          
 
+            // app.UseExceptionHandler("/Error");
             app.UseMvc(routes =>
             {
                

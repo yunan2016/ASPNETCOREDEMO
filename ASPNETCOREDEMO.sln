@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AreaAndPolicy", "AreaAndPolicy\AreaAndPolicy.csproj", "{F52F6D48-90B1-44B3-A1D5-A2574342E70C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AreaAndPolicy", "AreaAndPolicy\AreaAndPolicy.csproj", "{F52F6D48-90B1-44B3-A1D5-A2574342E70C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCTest", "MVCTest\MVCTest.csproj", "{4DD3F737-D039-42D3-887C-8F35CE58957B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "corewithIdentity", "corewithIdentity\corewithIdentity.csproj", "{3DC1F998-42D3-47A1-9EE5-A2E3C32301B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{4DD3F737-D039-42D3-887C-8F35CE58957B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DD3F737-D039-42D3-887C-8F35CE58957B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DD3F737-D039-42D3-887C-8F35CE58957B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DC1F998-42D3-47A1-9EE5-A2E3C32301B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DC1F998-42D3-47A1-9EE5-A2E3C32301B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DC1F998-42D3-47A1-9EE5-A2E3C32301B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DC1F998-42D3-47A1-9EE5-A2E3C32301B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
